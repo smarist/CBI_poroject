@@ -1,3 +1,4 @@
+# type: ignore
 import fitz  # PyMuPDF
 import re
 import json
