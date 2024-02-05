@@ -23,9 +23,11 @@ def convert_pdf_to_json(pdf_filename, json_filename):
         text = page.get_text()
         matches = pattern.findall(text)
         for match in matches:
+            # Replace newline characters with an empty string
+            sentence = match[1].strip().replace('\n', '')
             interviewer_data.append({
                 "Name": match[0],
-                "Sentence": match[1].strip()
+                "Sentence": sentence
             })
 
     # Close the PDF file after extraction
